@@ -13,7 +13,7 @@ build:
   number: 0
   script: "{{ PYTHON }} -m pip install . -vv"
 
-requirements: 
+requirements:
   build:
     - {{ compiler('cxx') }}
   host:
@@ -34,7 +34,7 @@ about:
   home: "https://github.com/ing-bank/sparse_dot_topn"
   license: "Apache-2.0"
   license_family: "Apache"
-  license_file: "LICENSE"
+  license_file: "LICENSE.txt"
   summary: |
     Sparse_dot_topn provides a fast way to performing a sparse matrix multiplication
     followed by top-n multiplication result selections. Comparing very large feature
