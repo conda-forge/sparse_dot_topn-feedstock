@@ -7,13 +7,13 @@ package:
 
 source:
   url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: "8df3e1568c3a445e763f90d59361499228c2f6a195dea31cdbae32b27150a504	"
+  sha256: "8df3e1568c3a445e763f90d59361499228c2f6a195dea31cdbae32b27150a504"
 
 build:
   number: 0
   script: "{{ PYTHON }} -m pip install . -vv"
 
-requirements: 
+requirements:
   build:
     - {{ compiler('cxx') }}
   host:
