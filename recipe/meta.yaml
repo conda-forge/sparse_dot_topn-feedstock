@@ -34,7 +34,7 @@ about:
   home: "https://github.com/ing-bank/sparse_dot_topn"
   license: "Apache-2.0"
   license_family: "Apache"
-  license_file: "LICENSE.txt"
+  license_file: "LICENSE"
   summary: |
     Sparse_dot_topn provides a fast way to performing a sparse matrix multiplication
     followed by top-n multiplication result selections. Comparing very large feature
