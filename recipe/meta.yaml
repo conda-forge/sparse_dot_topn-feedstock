@@ -25,6 +25,7 @@ requirements:
     - python
     - {{ pin_compatible('numpy') }}
     - scipy
+    - setuptools
 
 test:
   imports:
