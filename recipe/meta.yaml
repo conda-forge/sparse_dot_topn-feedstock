@@ -1,5 +1,5 @@
 {% set name = "sparse_dot_topn" %}
-{% set version = "0.2.5" %}
+{% set version = "0.2.6" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,13 +7,14 @@ package:
 
 source:
   url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: "2028d451d81cf5a73cf9d5fc56de35f80ac8dbd528a6abe3b723bec9c1adcc38"
+  sha256: "8df3e1568c3a445e763f90d59361499228c2f6a195dea31cdbae32b27150a504"
 
 build:
   number: 0
   script: "{{ PYTHON }} -m pip install . -vv"
+  skip: True  # [win and py27]
 
-requirements: 
+requirements:
   build:
     - {{ compiler('cxx') }}
   host:
@@ -25,6 +26,7 @@ requirements:
     - python
     - {{ pin_compatible('numpy') }}
     - scipy
+    - setuptools
 
 test:
   imports:
