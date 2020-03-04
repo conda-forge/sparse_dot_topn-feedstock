@@ -8,14 +8,14 @@ Package license: Apache-2.0
 Feedstock license: BSD 3-Clause
 
 Summary: Sparse_dot_topn provides a fast way to performing a sparse matrix multiplication
-followed by top-n multiplication result selections. Comparing very large feature
-vectors and picking the best matches, in practice often results in performing a
-sparse matrix multiplication followed by selecting the top-n multiplication results.
+followed by top-n multiplication result selections.
+
+
+Comparing very large feature vectors and picking the best matches, in practice often results in
+performing sparse matrix multiplication followed by selecting the top-n multiplication results.
 In this package, we implement a customized Cython function for this purpose.
 When comparing our Cythonic approach to doing the same use with SciPy and NumPy
 functions, our approach improves the speed by about 40% and reduces memory consumption.
-
-
 
 
 Current build status
@@ -169,7 +169,7 @@ A feedstock is made up of a conda recipe (the instructions on what and how to bu
 the package) and the necessary configurations for automatic building using freely
 available continuous integration services. Thanks to the awesome service provided by
 [CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/)
-and [TravisCI](https://travis-ci.org/) it is possible to build and upload installable
+and [TravisCI](https://travis-ci.com/) it is possible to build and upload installable
 packages to the [conda-forge](https://anaconda.org/conda-forge)
 [Anaconda-Cloud](https://anaconda.org/) channel for Linux, Windows and OSX respectively.
 
