@@ -1,17 +1,17 @@
 {% set name = "sparse_dot_topn" %}
-{% set version = "0.2.6" %}
+{% set version = "0.2.8" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: "8df3e1568c3a445e763f90d59361499228c2f6a195dea31cdbae32b27150a504"
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 05d1d3384cd7c0b2c45aa988b2cbe28f11697b6fbe6f36e79788671064d4bf19
 
 build:
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
   skip: True  # [win and py27]
 
 requirements:
@@ -25,7 +25,7 @@ requirements:
   run:
     - python
     - {{ pin_compatible('numpy') }}
-    - scipy
+    - scipy >=1.4.1
     - setuptools
 
 test:
@@ -33,20 +33,21 @@ test:
     - sparse_dot_topn
 
 about:
-  home: "https://github.com/ing-bank/sparse_dot_topn"
-  license: "Apache-2.0"
-  license_family: "Apache"
-  license_file: "LICENSE"
+  home: https://github.com/ing-bank/sparse_dot_topn
+  license: Apache-2.0
+  license_family: Apache
+  license_file: LICENSE
   summary: |
     Sparse_dot_topn provides a fast way to performing a sparse matrix multiplication
-    followed by top-n multiplication result selections. Comparing very large feature
-    vectors and picking the best matches, in practice often results in performing a
-    sparse matrix multiplication followed by selecting the top-n multiplication results.
+    followed by top-n multiplication result selections.
+  description: |
+    Comparing very large feature vectors and picking the best matches, in practice often results in
+    performing sparse matrix multiplication followed by selecting the top-n multiplication results.
     In this package, we implement a customized Cython function for this purpose.
     When comparing our Cythonic approach to doing the same use with SciPy and NumPy
     functions, our approach improves the speed by about 40% and reduces memory consumption.
-  doc_url: "https://pypi.org/project/sparse-dot-topn/"
-  dev_url: "https://github.com/ing-bank/sparse_dot_topn"
+  doc_url: https://pypi.org/project/sparse-dot-topn/
+  dev_url: https://github.com/ing-bank/sparse_dot_topn
 
 extra:
   recipe-maintainers:
