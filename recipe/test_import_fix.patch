@@ -1,0 +1,20 @@
+diff --git a/sparse_dot_topn/awesome_cossim_topn.py b/sparse_dot_topn/awesome_cossim_topn.py
+index c4af03d..ed0a6a7 100644
+--- a/sparse_dot_topn/awesome_cossim_topn.py
++++ b/sparse_dot_topn/awesome_cossim_topn.py
+@@ -3,13 +3,8 @@ import numpy as np
+ from scipy.sparse import csr_matrix
+ from scipy.sparse import isspmatrix_csr
+ 
+-if sys.version_info[0] >= 3:
+-    from sparse_dot_topn import sparse_dot_topn as ct
+-    from sparse_dot_topn import sparse_dot_topn_threaded as ct_thread
+-else:
+-    import sparse_dot_topn as ct
+-    import sparse_dot_topn_threaded as ct_thread
+-
++import sparse_dot_topn as ct
++import sparse_dot_topn_threaded as ct_thread
+ 
+ def awesome_cossim_topn(A, B, ntop, lower_bound=0, use_threads=False, n_jobs=1):
+     """
