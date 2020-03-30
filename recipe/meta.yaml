@@ -10,9 +10,9 @@ source:
   sha256: 721f2bc4615c6050084f96518322f1dcb2b82a1016a4d9a1fe508d351d992136
 
 build:
-  number: 1
+  noarch: python
+  number: 2
   script: {{ PYTHON }} -m pip install . -vv
-  skip: true  # [py27]
 
 requirements:
   build:
