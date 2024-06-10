@@ -1,21 +1,22 @@
 {% set name = "sparse_dot_topn" %}
-{% set version = "0.3.1" %}
+{% set version = "1.1.2" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 3573cb4a617abe0eab3d5c64f7322a2a6d165a396cacb8f176acb61681ff52fb
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('_', '-') }}-{{ version }}.tar.gz
+  sha256: 68508fd3c940ec6e6894af1d642cea0460d0d13509cf0a270fb77b62fe3caa1f
 
 build:
-  number: 2
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
     - {{ compiler('cxx') }}
+    - {{ stdlib("c") }}
   host:
     - pip
     - python
